@@ -1,0 +1,150 @@
+# Content Validation QA Tool Configuration
+
+# Comparison settings
+comparison:
+  # Case sensitivity
+  ignore_case: false
+  
+  # Whitespace normalization
+  normalize_whitespace: false
+  
+  # Punctuation handling
+  ignore_punctuation: false
+  
+  # Detect page boundaries
+  detect_page_changes: true
+  
+  # Detect paragraph boundaries
+  detect_paragraphs: true
+  
+  # Line-level comparison
+  line_comparison: true
+  
+  # Similarity threshold for fuzzy matching (0-1)
+  similarity_threshold: 0.95
+  
+  # Detect whitespace differences
+  detect_spacing: true
+
+# Text extraction settings
+extraction:
+  # PDF extraction engine: "pdfplumber" or "pymupdf"
+  pdf_engine: "pdfplumber"
+  
+  # OCR settings
+  ocr_language: "eng"
+  ocr_timeout: 300
+  ocr_dpi: 300
+  
+  # Preserve formatting
+  preserve_layout: true
+  
+  # Character encoding
+  encoding: "utf-8"
+
+# Text normalization settings
+normalization:
+  # Convert to lowercase for comparison
+  lowercase: false
+  
+  # Remove extra spaces
+  remove_extra_spaces: false
+  
+  # Remove leading/trailing spaces
+  strip_whitespace: true
+  
+  # Normalize line endings (\\r\\n -> \\n)
+  normalize_line_endings: true
+  
+  # Remove special characters
+  remove_special_chars: false
+  
+  # Remove URLs
+  remove_urls: false
+  
+  # Remove emails
+  remove_emails: false
+
+# Reporting settings
+reporting:
+  # Include character position in reports
+  include_position: true
+  
+  # Include context around mismatches
+  include_context: true
+  
+  # Number of lines to include as context
+  context_lines: 2
+  
+  # Maximum lines to display in CSV
+  max_csv_lines: 1000
+  
+  # Output directory for reports
+  output_dir: "./reports"
+  
+  # Include summary statistics
+  include_summary: true
+  
+  # Include timing information
+  include_timing: true
+
+# Batch processing settings
+batch:
+  # File extensions to process
+  file_extensions:
+    - ".pdf"
+    - ".docx"
+    - ".png"
+    - ".jpg"
+    - ".jpeg"
+    - ".tiff"
+    - ".bmp"
+  
+  # Number of parallel workers
+  max_workers: 4
+  
+  # Skip files on error
+  skip_on_error: false
+  
+  # Continue on missing files
+  continue_on_missing: false
+
+# Logging settings
+logging:
+  # Log level: DEBUG, INFO, WARNING, ERROR, CRITICAL
+  level: "INFO"
+  
+  # Log file path
+  file: "./logs/validation.log"
+  
+  # Console output
+  console: true
+  
+  # Log format
+  format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+  
+  # Maximum log file size (bytes)
+  max_file_size: 10485760  # 10MB
+  
+  # Backup count
+  backup_count: 5
+
+# Advanced settings
+advanced:
+  # Fuzzy matching for approximate word matches
+  fuzzy_matching: false
+  
+  # Machine learning-based comparison (experimental)
+  use_ml_comparison: false
+  
+  # Cache extracted text
+  cache_extractions: true
+  
+  # Cache directory
+  cache_dir: "./.cache"
+  
+  # Memory limit for large files (MB)
+  memory_limit: 4096
+  
+  # Timeout for single file processing (seconds)
+  file_timeout: 300
